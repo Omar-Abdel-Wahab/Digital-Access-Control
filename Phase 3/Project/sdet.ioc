@@ -1,0 +1,16 @@
+LEFT ( # IOs from bottom to top
+(IOPIN scanin.0 );
+(IOPIN daytime.0 );
+(IOPIN code(0).0 ); )
+TOP ( # IOs from left to right
+(IOPIN code(1).0 );
+(IOPIN code(2).0 );
+(IOPIN code(3).0 ); )
+RIGHT( # IOs from bottom to top
+(IOPIN test.0 );
+(IOPIN reset.0 ); )
+BOTTOM ( # IOs from left to right
+(IOPIN door.0 );
+(IOPIN clk.0 );
+(IOPIN alarm.0 );
+(IOPIN scanout.0 ); )

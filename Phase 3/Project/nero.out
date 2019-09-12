@@ -1,0 +1,200 @@
+
+                   @@@    @@@           @@@@@@@              
+                    @@     @              @@   @@            
+                    @@@    @              @@    @@           
+                    @ @@   @    @@@@@     @@    @@     @@@   
+                    @ @@   @   @     @    @@   @@    @@   @@ 
+                    @  @@  @  @@     @@   @@@@@     @@     @@
+                    @   @@ @  @@@@@@@@@   @@  @@    @@     @@
+                    @   @@ @  @@          @@   @@   @@     @@
+                    @    @@@  @@      @   @@   @@   @@     @@
+                    @     @@   @@    @@   @@    @@   @@   @@ 
+                   @@@    @@     @@@@   @@@@@   @@@    @@@   
+
+                               Negotiating Router
+
+                   Alliance CAD System 5.0 20090901,  nero 5.0
+                   Copyright (c) 2002-2019,     ASIM/LIP6/UPMC
+                   E-mail        : alliance-users@asim.lip6.fr
+
+                                S/N 20080611.1
+
+
+  o  MBK environment :
+
+     MBK_IN_LO       := vst
+     MBK_OUT_LO      := vst
+     MBK_IN_PH       := ap
+     MBK_OUT_PH      := ap
+     MBK_WORK_LIB    := .
+     MBK_CATA_LIB    := .
+                        /usr/lib64/alliance/cells/sxlib
+                        /usr/lib64/alliance/cells/dp_sxlib
+                        /usr/lib64/alliance/cells/rflib
+                        /usr/lib64/alliance/cells/rf2lib
+                        /usr/lib64/alliance/cells/ramlib
+                        /usr/lib64/alliance/cells/romlib
+                        /usr/lib64/alliance/cells/pxlib
+                        /usr/lib64/alliance/cells/padlib
+     MBK_CATAL_NAME  := CATAL
+     MBK_VDD         := vdd
+     MBK_VSS         := vss
+     MBK_SEPAR       := .
+
+  o  Loading netlist "sdetm_b_l_scan"...
+  o  Loading layout "sdet_p"...
+  o  Flattening layout...
+  o  Flattening netlist...
+  o  Building netlist dual representation (lofigchain)...
+  o  Binding logical & physical views...
+
+  o  Loading design into grid...
+     o  Using seed cell "a2_x2_2_ins" (model "a2_x2").
+     o  Grid offset : (0,0) [adjust (0,0)]
+     o  Small design, global routing disabled.
+     o  Allocating grid size [86,81,3].
+     o  Loading external terminals.
+     o  Finding obstacles.
+     o  Loading nets into grid.
+     o  Allocating the net scheduler.
+     o  Reading power grid.
+
+  o  Local routing stage.
+     - [ 107] (hp :=     0) "not_doorpass_cs 2"
+     - [ 106] (hp :=     0) "vdd"
+     - [ 105] (hp :=     0) "vss"
+     - [ 104] (hp :=     7) "door"
+     - [ 103] (hp :=     8) "na3_x1_sig"
+     - [ 102] (hp :=     9) "oa22_x2_2_sig"
+     - [ 101] (hp :=     9) "oa2a2a23_x2_sig"
+     - [ 100] (hp :=     9) "mbk_buf_not_aux26"
+     - [  99] (hp :=    10) "a2_x2_3_sig"
+     - [  98] (hp :=    10) "no3_x1_3_sig"
+     - [  97] (hp :=    10) "o2_x2_5_sig"
+     - [  96] (hp :=    10) "o2_x2_sig"
+     - [  95] (hp :=    11) "a3_x2_4_sig"
+     - [  94] (hp :=    11) "scanin"
+     - [  93] (hp :=    11) "na2_x1_sig"
+     - [  92] (hp :=    11) "na2_x1_2_sig"
+     - [  91] (hp :=    11) "na2_x1_5_sig"
+     - [  90] (hp :=    11) "not_aux30"
+     - [  89] (hp :=    12) "inv_x2_4_sig"
+     - [  88] (hp :=    12) "no3_x1_4_sig"
+     - [  87] (hp :=    12) "no3_x1_2_sig"
+     - [  86] (hp :=    12) "no2_x1_2_sig"
+     - [  85] (hp :=    12) "na2_x1_3_sig"
+     - [  84] (hp :=    12) "inv_x2_sig"
+     - [  83] (hp :=    13) "a3_x2_sig"
+     - [  82] (hp :=    13) "no2_x1_sig"
+     - [  81] (hp :=    13) "no2_x1_4_sig"
+     - [  80] (hp :=    13) "no2_x1_3_sig"
+     - [  79] (hp :=    13) "a2_x2_sig"
+     - [  78] (hp :=    13) "o3_x2_sig"
+     - [  77] (hp :=    13) "nao22_x1_4_sig"
+     - [  76] (hp :=    13) "o2_x2_2_sig"
+     - [  75] (hp :=    13) "na2_x1_6_sig"
+     - [  74] (hp :=    13) "a3_x2_2_sig"
+     - [  73] (hp :=    14) "o4_x2_2_sig"
+     - [  72] (hp :=    15) "inv_x2_2_sig"
+     - [  71] (hp :=    15) "no3_x1_7_sig"
+     - [  70] (hp :=    15) "no3_x1_5_sig"
+     - [  69] (hp :=    15) "na2_x1_4_sig"
+     - [  68] (hp :=    16) "aux2"
+     - [  67] (hp :=    16) "scanout"
+     - [  66] (hp :=    16) "o2_x2_4_sig"
+     - [  65] (hp :=    16) "not_code 1"
+     - [  64] (hp :=    16) "noa22_x1_sig"
+     - [  63] (hp :=    17) "o2_x2_3_sig"
+     - [  62] (hp :=    17) "na3_x1_2_sig"
+     - [  61] (hp :=    17) "not_aux42"
+     - [  60] (hp :=    18) "o4_x2_sig"
+     - [  59] (hp :=    18) "mx2_x2_sig"
+     - [  58] (hp :=    18) "a2_x2_2_sig"
+     - [  57] (hp :=    19) "noa22_x1_3_sig"
+     - [  56] (hp :=    19) "daytime"
+     - [  55] (hp :=    20) "no3_x1_sig"
+     - [  54] (hp :=    20) "oa2ao222_x2_2_sig"
+     - [  53] (hp :=    20) "aux16"
+     - [  52] (hp :=    21) "not_aux38"
+     - [  51] (hp :=    22) "not_aux40"
+     - [  50] (hp :=    25) "na4_x1_sig"
+     - [  49] (hp :=    25) "a3_x2_3_sig"
+     - [  48] (hp :=    25) "not_aux23"
+     - [  47] (hp :=    26) "aux13"
+     - [  46] (hp :=    26) "an12_x1_sig"
+     - [  45] (hp :=    26) "not_aux34"
+     - [  44] (hp :=    27) "nao22_x1_3_sig"
+     - [  43] (hp :=    28) "aux39"
+     - [  42] (hp :=    30) "no3_x1_6_sig"
+     - [  41] (hp :=    31) "not_aux26"
+     - [  40] (hp :=    31) "nao22_x1_sig"
+     - [  39] (hp :=    34) "na4_x1_2_sig"
+     - [  38] (hp :=    34) "ao22_x2_sig"
+     - [  37] (hp :=    36) "oa22_x2_sig"
+     - [  36] (hp :=    36) "nao22_x1_2_sig"
+     - [  35] (hp :=    40) "not_aux9"
+     - [  34] (hp :=    41) "inv_x2_3_sig"
+     - [  33] (hp :=    42) "doorpass_cs 2"
+     - [  32] (hp :=    42) "code 0"
+     - [  31] (hp :=    42) "alarm"
+     - [  30] (hp :=    44) "not_aux41"
+     - [  29] (hp :=    46) "not_aux31"
+     - [  28] (hp :=    48) "not_aux15"
+     - [  27] (hp :=    49) "not_aux37"
+     - [  26] (hp :=    50) "not_aux10"
+     - [  25] (hp :=    51) "not_aux24"
+     - [  24] (hp :=    53) "reset"
+     - [  23] (hp :=    54) "aux42"
+     - [  22] (hp :=    55) "aux40"
+     - [  21] (hp :=    56) "oa2a22_x2_sig"
+     - [  20] (hp :=    60) "no4_x1_sig"
+     - [  19] (hp :=    62) "noa22_x1_2_sig"
+     - [  18] (hp :=    62) "not_aux2"
+     - [  17] (hp :=    68) "oa2ao222_x2_sig"
+     - [  16] (hp :=    73) "o4_x2_3_sig"
+     - [  15] (hp :=    86) "no3_x1_8_sig"
+     - [  14] (hp :=    88) "not_doorpass_cs 0"
+     - [  13] (hp :=   101) "not_code 0"
+     - [  12] (hp :=   105) "code 1"
+     - [  11] (hp :=   106) "aux38"
+              > AStar unable to find a path.
+              > Re-routing with pri := 256.
+     - [  14] (hp :=    15) "no3_x1_7_sig"
+     - [  13] (hp :=    36) "nao22_x1_2_sig"
+     - [  12] (hp :=    40) "not_aux9"
+     - [  11] (hp :=    88) "not_doorpass_cs 0"
+     - [  10] (hp :=   121) "code 2"
+     - [   9] (hp :=   126) "not_doorpass_cs 1"
+     - [   8] (hp :=   127) "doorpass_cs 0"
+     - [   7] (hp :=   128) "not_doorpass_cs 3"
+     - [   6] (hp :=   129) "clk"
+     - [   5] (hp :=   132) "test"
+              > AStar unable to find a path.
+              > Re-routing with pri := 256.
+              > AStar unable to find a path.
+              > Re-routing with pri := 257.
+     - [   5] (hp :=    25) "na4_x1_sig"
+     - [   4] (hp :=   141) "not_code 3"
+     - [   3] (hp :=   142) "code 3"
+     - [   2] (hp :=   146) "not_code 2"
+     - [   1] (hp :=   156) "doorpass_cs 1"
+              > AStar unable to find a path.
+              > Re-routing with pri := 256.
+     - [   6] (hp :=    11) "na2_x1_sig"
+     - [   5] (hp :=    13) "no2_x1_sig"
+     - [   4] (hp :=    53) "reset"
+     - [   3] (hp :=   121) "code 2"
+     - [   2] (hp :=   126) "not_doorpass_cs 1"
+     - [   1] (hp :=   128) "not_doorpass_cs 3"
+     - [   0] (hp :=   158) "doorpass_cs 3"
+
+  o  Routing stats :
+     - routing iterations    := 211475
+     - re-routing iterations := 44102
+     - ratio                 := 17.2559%.
+
+  o  Dumping routing grid.
+  o  Saving MBK figure "sdetm_b_l_scan".
+  o  Saving layout as "sdetm_b_l_scan"...
+
+

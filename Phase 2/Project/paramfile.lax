@@ -1,0 +1,14 @@
+## Set the Optimization Mode (0..4)
+## 0 : full area optimization
+## 2 : 50% area, 50% delay
+## 4 : full delay optimization
+#M{2}
+## Set the Optimization Level (1..5)
+## 1 : poor optimization - small computation time
+## 5 : best optimization - long computation time
+#L{2}
+## External Output Capacitance (in fF)
+#C{
+door:100;
+alarm:100;
+}

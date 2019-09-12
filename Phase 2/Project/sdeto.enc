@@ -1,0 +1,14 @@
+# Encoding figure "doorpass"
+-doorpass o 12
+s11	0	1
+s10	1	2
+s9	2	4
+s8	3	8
+s7	4	10
+s6	5	20
+s5	6	40
+s4	7	80
+s3	8	100
+s2	9	200
+s1	A	400
+s0	B	800

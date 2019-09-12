@@ -1,0 +1,92 @@
+
+                   @@@@@@                          @@@    @@@
+                     @@                             @@     @ 
+                     @@                             @@@    @ 
+                     @@           @@@       @@@     @ @@   @ 
+                     @@         @@   @@   @@   @@   @ @@   @ 
+                     @@        @@     @@ @@     @@  @  @@  @ 
+                     @@        @@     @@ @@     @@  @   @@ @ 
+                     @@        @@     @@ @@     @@  @   @@ @ 
+                     @@      @ @@     @@ @@     @@  @    @@@ 
+                     @@     @   @@   @@   @@   @@   @     @@ 
+                   @@@@@@@@@@     @@@       @@@    @@@    @@ 
+
+                           Local optimization on Nets
+
+             Alliance CAD System 5.0 20090901, loon 5.0 [2003/12/07]
+             Copyright (c) 2000-2019,                 ASIM/LIP6/UPMC
+             Author(s):                              François Donnet
+             E-mail        :             alliance-users@asim.lip6.fr
+
+	MBK_IN_LO	: vst
+	MBK_OUT_LO	: vst
+	MBK_TARGET_LIB	: /usr/lib64/alliance/cells/sxlib
+
+Reading parameter file 'paramfile.lax'...
+50% area - 50% delay optimization
+Reading file 'sdeta_b.vst'...
+Controlling file 'paramfile.lax'...
+Reading lib '/usr/lib64/alliance/cells/sxlib'...
+Capacitances on file 'sdeta_b.vst'...
+Delays on file 'sdeta_b.vst'...3633 ps
+Area on file 'sdeta_b.vst'...146500 lamda² (with over-cell routing)
+Details...
+	inv_x2: 16 (8%)
+	na2_x1: 12 (8%)
+	no2_x1: 10 (6%)
+	a2_x2: 9 (7%)
+	oa22_x2: 8 (8%)
+	o2_x2: 8 (6%)
+	no3_x1: 8 (6%)
+	on12_x1: 6 (5%)
+	nao22_x1: 6 (6%)
+	noa22_x1: 4 (4%)
+	na3_x1: 4 (3%)
+	sff1_x4: 4 (12%)
+	no4_x1: 2 (2%)
+	xr2_x1: 2 (3%)
+	a3_x2: 2 (2%)
+	o4_x2: 1 (1%)
+	oa2a2a23_x2: 1 (2%)
+	an12_x1: 1 (0%)
+	a4_x2: 1 (1%)
+	noa2a2a23_x1: 1 (1%)
+	na4_x1: 1 (1%)
+	o3_x2: 1 (1%)
+	Total: 108
+Worst RC on file 'sdeta_b.vst'...303 ps
+Inserting buffers on critical path for file 'sdeta_b_l.vst'...1 buffer inserted -> 3625 ps
+Improving RC on critical path for file 'sdeta_b_l.vst'...3548 ps
+Improving all RC for file 'sdeta_b_l.vst'...
+Worst RC on file 'sdeta_b_l.vst'...303 ps
+Area on file 'sdeta_b_l.vst'...147500 lamda² (with over-cell routing)
+Details...
+	inv_x2: 16 (8%)
+	na2_x1: 12 (8%)
+	no2_x1: 10 (6%)
+	a2_x2: 9 (7%)
+	oa22_x2: 8 (8%)
+	o2_x2: 8 (6%)
+	no3_x1: 8 (6%)
+	on12_x1: 6 (5%)
+	nao22_x1: 6 (6%)
+	noa22_x1: 4 (4%)
+	na3_x1: 4 (3%)
+	sff1_x4: 4 (12%)
+	no4_x1: 2 (2%)
+	xr2_x1: 2 (3%)
+	a3_x2: 2 (2%)
+	buf_x2: 1 (0%)
+	o4_x2: 1 (1%)
+	oa2a2a23_x2: 1 (2%)
+	an12_x1: 1 (0%)
+	a4_x2: 1 (1%)
+	noa2a2a23_x1: 1 (1%)
+	na4_x1: 1 (1%)
+	o3_x2: 1 (1%)
+	Total: 109
+Critical path (no warranty)...3548 ps from 'doorpass_cs 2' to 'alarm'
+Saving file 'sdeta_b_l.vst'...
+Saving delay gradient in xsch color file 'sdeta_b_l.xsc'...
+End of loon...
+

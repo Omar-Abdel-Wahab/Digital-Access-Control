@@ -1,0 +1,34 @@
+
+              @@@@ @                                  @             
+             @    @@                                 @@@            
+            @@     @                                  @             
+            @@@          @@@     @@@@    @@@ @@@          @@@ @@@   
+             @@@@      @@   @@  @@   @    @@@  @@  @@@@    @@@   @  
+               @@@@   @@     @  @@   @@   @@    @@   @@    @@    @@ 
+                 @@@  @@          @@@@@   @@    @@   @@    @@    @@ 
+            @      @@ @@        @@   @@   @@    @@   @@    @@    @@ 
+            @@     @@ @@     @ @@    @@   @@    @@   @@    @@    @@ 
+            @@@    @   @@   @@ @@   @@@   @@@  @@    @@    @@    @@ 
+            @  @@@@      @@@    @@@@  @@  @@ @@@   @@@@@@ @@@@  @@@@
+                                          @@                        
+                                         @@@@                       
+
+                               SCAn Path INsertion
+
+                  Alliance CAD System 5.0 20090901, scapin 5.0
+                  Copyright (c) 2000-2019,      ASIM/LIP6/UPMC
+                  Author(s):                   Ludovic Jacomme
+                  Contributor(s):              Ilhem Kazi Tani
+                  E-mail        :  alliance-users@asim.lip6.fr
+
+	--> Parse parameter file /usr/lib64/alliance/etc/sxlib.scapin
+	--> Parse path file scan
+	--> Compile Structural file sdetm_b_l
+	--> Insert Scan Path
+	    > Replace register doorpass_cs_0_ins (sff1_x4) by a reg-mux (sff2_x4)
+	    > Replace register doorpass_cs_1_ins (sff1_x4) by a reg-mux (sff2_x4)
+	    > Replace register doorpass_cs_2_ins (sff1_x4) by a reg-mux (sff2_x4)
+	    > Replace register doorpass_cs_3_ins (sff1_x4) by a reg-mux (sff2_x4)
+	    Insert a buffer (buf_x2) before the port scanout
+	--> Save Structural file sdetm_b_l_scan
+

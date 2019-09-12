@@ -1,0 +1,66 @@
+
+                  @@@@@@@                             @@@@ @  
+                    @@   @@                         @@    @@  
+                    @@    @@                       @@      @  
+                    @@    @@     @@@       @@@    @@          
+                    @@   @@    @@   @@   @@   @@  @@          
+                    @@@@@@    @@     @@ @@     @@ @@     @@@@@
+                    @@    @@  @@     @@ @@     @@ @@     @ @@ 
+                    @@     @@ @@     @@ @@     @@ @@    @  @@ 
+                    @@     @@ @@     @@ @@     @@  @@      @@ 
+                    @@    @@   @@   @@   @@   @@    @@    @@  
+                  @@@@@@@@       @@@       @@@        @@@@    
+
+                         Binding and Optimizing On Gates
+
+             Alliance CAD System 5.0 20090901, boog 5.0 [2003/01/09]
+             Copyright (c) 2000-2019,                 ASIM/LIP6/UPMC
+             Author(s):                              François Donnet
+             E-mail        :             alliance-users@asim.lip6.fr
+
+        MBK_VDD        : vdd
+        MBK_VSS        : vss
+        MBK_IN_LO      : vst
+        MBK_OUT_LO     : vst
+        MBK_WORK_LIB   : .
+        MBK_TARGET_LIB : /usr/lib64/alliance/cells/sxlib
+
+Reading parameter file 'paramfile.lax'...
+50% area - 50% delay optimization
+Reading file 'sdetj_b.vbe'...
+Controlling file 'paramfile.lax'...
+Controlling file 'sdetj_b.vbe'...
+Reading lib '/usr/lib64/alliance/cells/sxlib'...
+Controlling lib '/usr/lib64/alliance/cells/sxlib'...
+Preparing file 'sdetj_b.vbe'...
+Capacitances on file 'sdetj_b.vbe'...
+Unflattening file 'sdetj_b.vbe'...
+Mapping file 'sdetj_b.vbe'...
+Saving file 'sdetj_b.vst'...
+Quick estimated critical path (no warranty)...2746 ps from 'doorpass_cs 0' to 'doorpass_cs 0'
+Quick estimated area (with over-cell routing)...131750 lambda²
+Details...
+	inv_x2: 19
+	o2_x2: 15
+	no2_x1: 12
+	na2_x1: 7
+	na3_x1: 6
+	nao22_x1: 5
+	oa2ao222_x2: 4
+	sff1_x4: 4
+	no3_x1: 3
+	oa22_x2: 3
+	a2_x2: 3
+	a3_x2: 3
+	an12_x1: 3
+	noa22_x1: 2
+	nao2o22_x1: 2
+	on12_x1: 1
+	o3_x2: 1
+	oa2a2a23_x2: 1
+	noa2a2a23_x1: 1
+	nmx2_x1: 1
+	Total: 96
+Saving delay gradient in xsch color file 'sdetj_b.xsc'...
+End of boog...
+

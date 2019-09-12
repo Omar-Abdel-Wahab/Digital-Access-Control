@@ -1,0 +1,91 @@
+
+                   @@@@@@                          @@@    @@@
+                     @@                             @@     @ 
+                     @@                             @@@    @ 
+                     @@           @@@       @@@     @ @@   @ 
+                     @@         @@   @@   @@   @@   @ @@   @ 
+                     @@        @@     @@ @@     @@  @  @@  @ 
+                     @@        @@     @@ @@     @@  @   @@ @ 
+                     @@        @@     @@ @@     @@  @   @@ @ 
+                     @@      @ @@     @@ @@     @@  @    @@@ 
+                     @@     @   @@   @@   @@   @@   @     @@ 
+                   @@@@@@@@@@     @@@       @@@    @@@    @@ 
+
+                           Local optimization on Nets
+
+             Alliance CAD System 5.0 20090901, loon 5.0 [2003/12/07]
+             Copyright (c) 2000-2019,                 ASIM/LIP6/UPMC
+             Author(s):                              François Donnet
+             E-mail        :             alliance-users@asim.lip6.fr
+
+	MBK_IN_LO	: vst
+	MBK_OUT_LO	: vst
+	MBK_TARGET_LIB	: /usr/lib64/alliance/cells/sxlib
+
+Reading parameter file 'paramfile.lax'...
+50% area - 50% delay optimization
+Reading file 'sdetj_b.vst'...
+Controlling file 'paramfile.lax'...
+Reading lib '/usr/lib64/alliance/cells/sxlib'...
+Capacitances on file 'sdetj_b.vst'...
+Delays on file 'sdetj_b.vst'...3094 ps
+Area on file 'sdetj_b.vst'...131750 lamda² (with over-cell routing)
+Details...
+	inv_x2: 19 (10%)
+	o2_x2: 15 (14%)
+	no2_x1: 12 (9%)
+	na2_x1: 7 (5%)
+	na3_x1: 6 (5%)
+	nao22_x1: 5 (5%)
+	oa2ao222_x2: 4 (7%)
+	sff1_x4: 4 (13%)
+	no3_x1: 3 (2%)
+	oa22_x2: 3 (3%)
+	a2_x2: 3 (2%)
+	a3_x2: 3 (3%)
+	an12_x1: 3 (2%)
+	noa22_x1: 2 (2%)
+	nao2o22_x1: 2 (2%)
+	on12_x1: 1 (0%)
+	o3_x2: 1 (1%)
+	oa2a2a23_x2: 1 (2%)
+	noa2a2a23_x1: 1 (1%)
+	nmx2_x1: 1 (1%)
+	Total: 96
+Worst RC on file 'sdetj_b.vst'...303 ps
+Inserting buffers on critical path for file 'sdetj_b_l.vst'...2 buffers inserted -> 3050 ps
+Improving RC on critical path for file 'sdetj_b_l.vst'...2979 ps
+Improving all RC for file 'sdetj_b_l.vst'...
+Worst RC on file 'sdetj_b_l.vst'...303 ps
+Area on file 'sdetj_b_l.vst'...135250 lamda² (with over-cell routing)
+Details...
+	inv_x2: 17 (9%)
+	o2_x2: 15 (13%)
+	no2_x1: 12 (8%)
+	na2_x1: 7 (5%)
+	na3_x1: 6 (5%)
+	nao22_x1: 5 (5%)
+	sff1_x4: 4 (13%)
+	no3_x1: 3 (2%)
+	oa22_x2: 3 (3%)
+	a2_x2: 3 (2%)
+	a3_x2: 3 (3%)
+	oa2ao222_x2: 3 (5%)
+	buf_x2: 2 (1%)
+	noa22_x1: 2 (2%)
+	inv_x4: 2 (1%)
+	nao2o22_x1: 2 (2%)
+	an12_x1: 2 (1%)
+	on12_x1: 1 (0%)
+	o3_x2: 1 (1%)
+	oa2ao222_x4: 1 (2%)
+	oa2a2a23_x2: 1 (2%)
+	noa2a2a23_x1: 1 (1%)
+	an12_x4: 1 (1%)
+	nmx2_x1: 1 (1%)
+	Total: 98
+Critical path (no warranty)...2979 ps from 'doorpass_cs 0' to 'alarm'
+Saving file 'sdetj_b_l.vst'...
+Saving delay gradient in xsch color file 'sdetj_b_l.xsc'...
+End of loon...
+

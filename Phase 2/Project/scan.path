@@ -1,0 +1,11 @@
+BEGIN_PATH_REG
+doorpass_cs_0_ins
+doorpass_cs_1_ins
+doorpass_cs_2_ins
+doorpass_cs_3_ins
+END_PATH_REG
+BEGIN_CONNECTOR
+SCAN_IN scanin
+SCAN_OUT scanout
+SCAN_TEST test
+END_CONNECTOR

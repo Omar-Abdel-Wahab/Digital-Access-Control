@@ -1,0 +1,117 @@
+-- VHDL data flow description generated from `sdetm_b`
+--		date : Mon Apr 22 12:52:34 2019
+
+
+-- Entity Declaration
+
+ENTITY sdetm_b IS
+  PORT (
+  daytime : in BIT;	-- daytime
+  reset : in BIT;	-- reset
+  code : in bit_vector(3 DOWNTO 0) ;	-- code
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  door : out BIT;	-- door
+  alarm : out BIT	-- alarm
+  );
+END sdetm_b;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF sdetm_b IS
+  SIGNAL doorpass_cs : REG_VECTOR(3 DOWNTO 0) REGISTER;	-- doorpass_cs
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux10 : BIT;		-- aux10
+  SIGNAL aux13 : BIT;		-- aux13
+  SIGNAL aux15 : BIT;		-- aux15
+  SIGNAL aux16 : BIT;		-- aux16
+  SIGNAL aux23 : BIT;		-- aux23
+  SIGNAL aux24 : BIT;		-- aux24
+  SIGNAL aux26 : BIT;		-- aux26
+  SIGNAL aux30 : BIT;		-- aux30
+  SIGNAL aux31 : BIT;		-- aux31
+  SIGNAL aux34 : BIT;		-- aux34
+  SIGNAL aux37 : BIT;		-- aux37
+  SIGNAL aux38 : BIT;		-- aux38
+  SIGNAL aux39 : BIT;		-- aux39
+  SIGNAL aux40 : BIT;		-- aux40
+  SIGNAL aux41 : BIT;		-- aux41
+  SIGNAL aux42 : BIT;		-- aux42
+
+BEGIN
+  aux42 <= (NOT(code(2)) AND aux40);
+  aux41 <= NOT(doorpass_cs(3) OR daytime);
+  aux40 <= (NOT(reset) AND NOT(doorpass_cs(2)));
+  aux39 <= (((NOT(aux10) OR NOT(code(0))) OR NOT(code(3))) 
+AND code(2));
+  aux38 <= (NOT(reset) AND doorpass_cs(2));
+  aux37 <= (((NOT(code(1)) AND doorpass_cs(0)) AND code(0)) 
+AND NOT(code(3)));
+  aux34 <= (((aux31 AND doorpass_cs(1)) AND NOT(code(3))) 
+AND NOT(code(2)));
+  aux31 <= (aux10 AND NOT(code(0)));
+  aux30 <= ((((code(1) AND doorpass_cs(0)) AND NOT(code(0)))
+ AND code(3)) AND doorpass_cs(3));
+  aux26 <= NOT((NOT(code(1)) OR doorpass_cs(0)) OR code(0));
+  aux24 <= (NOT(code(1)) AND code(0));
+  aux23 <= ((((doorpass_cs(0) AND code(3)) OR (NOT(
+doorpass_cs(1)) AND NOT(code(3)))) AND doorpass_cs(3)) OR ((
+doorpass_cs(1) AND NOT(code(3))) AND NOT(doorpass_cs(3))));
+  aux16 <= (NOT(doorpass_cs(0)) AND NOT(code(3)));
+  aux15 <= NOT((aux2 OR NOT(doorpass_cs(1))) OR code(3));
+  aux13 <= (NOT(doorpass_cs(0)) OR doorpass_cs(1));
+  aux10 <= NOT(code(1) OR doorpass_cs(0));
+  aux9 <= ((((aux2 AND NOT(doorpass_cs(0))) OR 
+doorpass_cs(1)) OR (((aux2 OR NOT(code(3))) AND doorpass_cs(3))
+ OR ((NOT(doorpass_cs(0)) AND code(3)) AND NOT(
+doorpass_cs(3))))) AND NOT(code(2)));
+  aux2 <= (NOT(code(1)) OR code(0));
+  label0 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs (0) <= GUARDED (((NOT(aux24) OR (doorpass_cs(1) AND code(3)) OR 
+aux16 OR aux23 OR NOT(code(2))) AND aux38) OR (((((NOT
+(doorpass_cs(1)) AND code(3)) OR NOT(code(2))) AND
+ NOT(doorpass_cs(0)) AND aux41) OR ((((NOT(aux26) 
+OR NOT(doorpass_cs(1)) OR code(3)) AND aux13) OR 
+doorpass_cs(3)) AND aux39) OR aux9) AND aux40));
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs (1) <= GUARDED ((((aux37 AND doorpass_cs(3) AND code(2)) OR 
+aux34) AND aux38) OR ((aux30 OR (aux26 AND NOT(
+doorpass_cs(1)) AND NOT(code(3)) AND NOT(doorpass_cs(3)))) AND 
+aux42));
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs (2) <= GUARDED ((((aux37 AND NOT(doorpass_cs(3)) AND code(2)) OR
+ ((doorpass_cs(1) OR NOT(doorpass_cs(3))) AND 
+aux31 AND NOT(code(3)) AND NOT(code(2)))) AND aux38) 
+OR ((doorpass_cs(0) OR NOT(doorpass_cs(1))) AND NOT
+(aux2) AND code(3) AND doorpass_cs(3) AND aux42));
+  END BLOCK label2;
+  label3 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs (3) <= GUARDED ((aux15 AND NOT(doorpass_cs(3)) AND code(2) AND 
+NOT(reset)) OR (((aux37 AND code(2)) OR aux34) AND 
+aux38) OR (aux30 AND aux42));
+  END BLOCK label3;
+
+alarm <= (((((NOT(code(0)) OR doorpass_cs(1)) AND code(3))
+ OR code(1) OR (doorpass_cs(0) AND NOT(code(0))) 
+OR aux23 OR (aux16 AND code(2)) OR (code(0) AND NOT
+(code(2)))) AND aux38) OR (((NOT(doorpass_cs(0)) 
+AND NOT(doorpass_cs(1)) AND code(3) AND NOT(
+doorpass_cs(3)) AND code(2) AND NOT(daytime)) OR (((NOT(aux15) 
+AND aux13) OR doorpass_cs(3)) AND aux39) OR aux9) 
+AND aux40));
+
+door <= (((NOT(doorpass_cs(1)) OR NOT(doorpass_cs(3))) 
+AND aux24 AND code(3) AND code(2) AND aux38) OR ((
+doorpass_cs(1) OR NOT(aux41)) AND (NOT(doorpass_cs(0)) OR 
+doorpass_cs(3)) AND aux13 AND aux24 AND code(3) AND code(2) AND
+ aux40));
+END;

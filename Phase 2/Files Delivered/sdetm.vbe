@@ -1,0 +1,198 @@
+-- VHDL data flow description generated from `sdetm`
+--		date : Mon Apr 22 12:52:16 2019
+
+
+-- Entity Declaration
+
+ENTITY sdetm IS
+  PORT (
+  daytime : in BIT;	-- daytime
+  reset : in BIT;	-- reset
+  code : in bit_vector(3 DOWNTO 0) ;	-- code
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  door : out BIT;	-- door
+  alarm : out BIT	-- alarm
+  );
+END sdetm;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE VBE OF sdetm IS
+  SIGNAL doorpass_cs : REG_VECTOR(3 DOWNTO 0) REGISTER;	-- doorpass_cs
+  SIGNAL doorpass_cs_s11 : BIT;		-- doorpass_cs_s11
+  SIGNAL doorpass_ns_s11 : BIT;		-- doorpass_ns_s11
+  SIGNAL doorpass_cs_s10 : BIT;		-- doorpass_cs_s10
+  SIGNAL doorpass_ns_s10 : BIT;		-- doorpass_ns_s10
+  SIGNAL doorpass_cs_s9 : BIT;		-- doorpass_cs_s9
+  SIGNAL doorpass_ns_s9 : BIT;		-- doorpass_ns_s9
+  SIGNAL doorpass_cs_s8 : BIT;		-- doorpass_cs_s8
+  SIGNAL doorpass_ns_s8 : BIT;		-- doorpass_ns_s8
+  SIGNAL doorpass_cs_s7 : BIT;		-- doorpass_cs_s7
+  SIGNAL doorpass_ns_s7 : BIT;		-- doorpass_ns_s7
+  SIGNAL doorpass_cs_s6 : BIT;		-- doorpass_cs_s6
+  SIGNAL doorpass_ns_s6 : BIT;		-- doorpass_ns_s6
+  SIGNAL doorpass_cs_s5 : BIT;		-- doorpass_cs_s5
+  SIGNAL doorpass_ns_s5 : BIT;		-- doorpass_ns_s5
+  SIGNAL doorpass_cs_s4 : BIT;		-- doorpass_cs_s4
+  SIGNAL doorpass_ns_s4 : BIT;		-- doorpass_ns_s4
+  SIGNAL doorpass_cs_s3 : BIT;		-- doorpass_cs_s3
+  SIGNAL doorpass_ns_s3 : BIT;		-- doorpass_ns_s3
+  SIGNAL doorpass_cs_s2 : BIT;		-- doorpass_cs_s2
+  SIGNAL doorpass_ns_s2 : BIT;		-- doorpass_ns_s2
+  SIGNAL doorpass_cs_s1 : BIT;		-- doorpass_cs_s1
+  SIGNAL doorpass_ns_s1 : BIT;		-- doorpass_ns_s1
+  SIGNAL doorpass_cs_s0 : BIT;		-- doorpass_cs_s0
+  SIGNAL doorpass_ns_s0 : BIT;		-- doorpass_ns_s0
+  SIGNAL doorpass_ns : BIT_VECTOR(3 DOWNTO 0);	-- doorpass_ns
+
+BEGIN
+  doorpass_ns(0) <= (doorpass_ns_s1 OR doorpass_ns_s2 OR 
+doorpass_ns_s4 OR doorpass_ns_s6 OR doorpass_ns_s10);
+  doorpass_ns(1) <= (doorpass_ns_s1 OR doorpass_ns_s3 OR 
+doorpass_ns_s4 OR doorpass_ns_s5 OR doorpass_ns_s7);
+  doorpass_ns(2) <= (doorpass_ns_s3 OR doorpass_ns_s4 OR 
+doorpass_ns_s9 OR doorpass_ns_s10 OR doorpass_ns_s11);
+  doorpass_ns(3) <= (doorpass_ns_s2 OR doorpass_ns_s3 OR 
+doorpass_ns_s4 OR doorpass_ns_s5 OR doorpass_ns_s8 OR 
+doorpass_ns_s11);
+  doorpass_ns_s0 <= ((doorpass_cs_s0 AND code(0) AND NOT(code(1)) AND
+ code(2) AND code(3) AND daytime) OR (
+doorpass_cs_s10 AND code(0) AND NOT(code(1)) AND code(2) AND 
+code(3)) OR (doorpass_cs_s11 AND code(0) AND NOT(code(1)
+) AND code(2) AND code(3)) OR (doorpass_cs_s5 AND 
+code(0) AND NOT(code(1)) AND code(2) AND code(3)) OR 
+doorpass_cs_s6 OR (doorpass_cs_s7 AND code(0) AND NOT(code(1)) 
+AND code(2) AND code(3)) OR (doorpass_cs_s8 AND 
+code(0) AND NOT(code(1)) AND code(2) AND code(3)) OR (
+doorpass_cs_s9 AND code(0) AND NOT(code(1)) AND code(2) AND 
+code(3)));
+  doorpass_cs_s0 <= (NOT(doorpass_cs(3)) AND NOT(doorpass_cs(2)) AND 
+NOT(doorpass_cs(1)) AND NOT(doorpass_cs(0)));
+  doorpass_ns_s1 <= (doorpass_cs_s0 AND NOT(code(0)) AND code(1) AND 
+NOT(code(2)) AND NOT(code(3)) AND NOT(daytime));
+  doorpass_cs_s1 <= (NOT(doorpass_cs(3)) AND doorpass_cs(1) AND 
+doorpass_cs(0));
+  doorpass_ns_s2 <= (doorpass_cs_s1 AND NOT(code(0)) AND code(1) AND 
+code(2) AND NOT(code(3)));
+  doorpass_cs_s2 <= (doorpass_cs(3) AND NOT(doorpass_cs(2)) AND 
+doorpass_cs(0));
+  doorpass_ns_s3 <= (doorpass_cs_s2 AND NOT(code(0)) AND code(1) AND 
+NOT(code(2)) AND code(3));
+  doorpass_cs_s3 <= (doorpass_cs(2) AND doorpass_cs(1) AND NOT(
+doorpass_cs(0)));
+  doorpass_ns_s4 <= (doorpass_cs_s3 AND NOT(code(0)) AND NOT(code(1))
+ AND NOT(code(2)) AND NOT(code(3)));
+  doorpass_cs_s4 <= (doorpass_cs(3) AND doorpass_cs(2) AND 
+doorpass_cs(0));
+  doorpass_ns_s5 <= (doorpass_cs_s4 AND code(0) AND NOT(code(1)) AND 
+code(2) AND NOT(code(3)));
+  doorpass_cs_s5 <= (doorpass_cs(3) AND NOT(doorpass_cs(2)) AND 
+doorpass_cs(1));
+  doorpass_ns_s6 <= ((doorpass_cs_s0 AND (((code(0) OR NOT(code(1)) 
+OR code(2) OR code(3)) AND NOT(daytime)) OR ((
+code(0) OR NOT(code(1)) OR code(2)) AND NOT(code(3))) OR
+ ((NOT(code(0)) OR code(1) OR NOT(code(2))) AND 
+code(3)))) OR (doorpass_cs_s1 AND (code(0) OR NOT(
+code(1)) OR NOT(code(2)) OR code(3))) OR (
+doorpass_cs_s10 AND (NOT(code(0)) OR code(1) OR NOT(code(2)))) 
+OR (doorpass_cs_s11 AND (NOT(code(0)) OR code(1) OR
+ NOT(code(2)) OR NOT(code(3)))) OR (doorpass_cs_s2
+ AND (code(0) OR NOT(code(1)) OR code(2) OR NOT(
+code(3)))) OR (doorpass_cs_s3 AND (code(0) OR code(1) OR
+ code(2) OR code(3))) OR (doorpass_cs_s4 AND (NOT(
+code(0)) OR code(1) OR NOT(code(2)) OR code(3))) OR (
+doorpass_cs_s5 AND (NOT(code(0)) OR code(1) OR NOT(code(2)) OR 
+NOT(code(3)))) OR (doorpass_cs_s7 AND (((code(0) OR 
+NOT(code(1)) OR NOT(code(2))) AND NOT(code(3))) OR (
+(NOT(code(0)) OR code(1) OR NOT(code(2))) AND 
+code(3)))) OR (doorpass_cs_s8 AND (((code(0) OR NOT(
+code(1))) AND NOT(code(2))) OR ((NOT(code(0)) OR code(1)
+) AND code(2)) OR NOT(code(3)))) OR (
+doorpass_cs_s9 AND (((code(0) OR code(1) OR code(2)) AND NOT(
+code(3))) OR ((NOT(code(0)) OR code(1) OR NOT(code(2))) 
+AND code(3)))));
+  doorpass_cs_s6 <= (NOT(doorpass_cs(3)) AND NOT(doorpass_cs(2)) AND 
+NOT(doorpass_cs(1)) AND doorpass_cs(0));
+  doorpass_ns_s7 <= (doorpass_cs_s0 AND NOT(code(0)) AND code(1) AND 
+NOT(code(2)) AND NOT(code(3)) AND daytime);
+  doorpass_cs_s7 <= (NOT(doorpass_cs(3)) AND doorpass_cs(1) AND NOT(
+doorpass_cs(0)));
+  doorpass_ns_s8 <= (doorpass_cs_s7 AND NOT(code(0)) AND code(1) AND 
+code(2) AND NOT(code(3)));
+  doorpass_cs_s8 <= (doorpass_cs(3) AND NOT(doorpass_cs(2)) AND NOT(
+doorpass_cs(1)) AND NOT(doorpass_cs(0)));
+  doorpass_ns_s9 <= (doorpass_cs_s8 AND NOT(code(0)) AND code(1) AND 
+NOT(code(2)) AND code(3));
+  doorpass_cs_s9 <= (NOT(doorpass_cs(3)) AND doorpass_cs(2) AND NOT(
+doorpass_cs(0)));
+  doorpass_ns_s10 <= (doorpass_cs_s9 AND NOT(code(0)) AND NOT(code(1))
+ AND NOT(code(2)) AND NOT(code(3)));
+  doorpass_cs_s10 <= (NOT(doorpass_cs(3)) AND doorpass_cs(2) AND 
+doorpass_cs(0));
+  doorpass_ns_s11 <= (doorpass_cs_s10 AND code(0) AND NOT(code(1)) AND
+ code(2) AND NOT(code(3)));
+  doorpass_cs_s11 <= (doorpass_cs(3) AND doorpass_cs(2) AND NOT(
+doorpass_cs(1)));
+  label0 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs(0) <= GUARDED (doorpass_ns(0) AND NOT(reset));
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs(1) <= GUARDED (doorpass_ns(1) AND NOT(reset));
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs(2) <= GUARDED (doorpass_ns(2) AND NOT(reset));
+  END BLOCK label2;
+  label3 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    doorpass_cs(3) <= GUARDED (doorpass_ns(3) AND NOT(reset));
+  END BLOCK label3;
+
+alarm <= ((doorpass_cs_s0 AND ((NOT(reset) AND (code(0) OR
+ NOT(code(1)) OR code(2) OR code(3)) AND NOT(
+daytime)) OR (NOT(reset) AND (code(0) OR NOT(code(1)) OR
+ code(2)) AND NOT(code(3))) OR (NOT(reset) AND 
+NOT(code(0) AND NOT(code(1)) AND code(2)) AND code(3)
+))) OR (doorpass_cs_s1 AND NOT(reset) AND (code(0)
+ OR NOT(code(1)) OR NOT(code(2)) OR code(3))) OR (
+doorpass_cs_s2 AND NOT(reset) AND NOT(NOT(code(0)) AND code(1) 
+AND NOT(code(2)) AND code(3))) OR (doorpass_cs_s3 
+AND NOT(reset) AND (code(0) OR code(1) OR code(2) OR
+ code(3))) OR (doorpass_cs_s4 AND NOT(reset) AND (
+NOT(code(0)) OR code(1) OR NOT(code(2)) OR code(3)))
+ OR (doorpass_cs_s5 AND NOT(reset) AND NOT(code(0)
+ AND NOT(code(1)) AND code(2) AND code(3))) OR (
+doorpass_cs_s7 AND ((NOT(reset) AND NOT(NOT(code(0)) AND 
+code(1) AND code(2)) AND NOT(code(3))) OR (NOT(reset) 
+AND NOT(code(0) AND NOT(code(1)) AND code(2)) AND 
+code(3)))) OR (doorpass_cs_s8 AND ((NOT(reset) AND NOT(
+code(3))) OR (NOT(reset) AND NOT(NOT(code(0)) AND 
+code(1)) AND NOT(code(2))) OR (NOT(reset) AND (NOT(
+code(0)) OR code(1)) AND code(2)))) OR (doorpass_cs_s9 
+AND ((NOT(reset) AND (code(0) OR code(1) OR code(2))
+ AND NOT(code(3))) OR (NOT(reset) AND NOT(code(0) 
+AND NOT(code(1)) AND code(2)) AND code(3)))) OR (
+doorpass_cs_s10 AND NOT(reset) AND NOT(code(0) AND NOT(code(1)) 
+AND code(2))) OR (doorpass_cs_s11 AND NOT(reset) AND
+ NOT(code(0) AND NOT(code(1)) AND code(2) AND 
+code(3))));
+
+door <= ((doorpass_cs_s0 AND NOT(reset) AND code(0) AND 
+NOT(code(1)) AND code(2) AND code(3) AND daytime) OR
+ (doorpass_cs_s5 AND NOT(reset) AND code(0) AND 
+NOT(code(1)) AND code(2) AND code(3)) OR (
+doorpass_cs_s7 AND NOT(reset) AND code(0) AND NOT(code(1)) AND 
+code(2) AND code(3)) OR (doorpass_cs_s8 AND NOT(reset) 
+AND code(0) AND NOT(code(1)) AND code(2) AND code(3)
+) OR (doorpass_cs_s9 AND NOT(reset) AND code(0) 
+AND NOT(code(1)) AND code(2) AND code(3)) OR (
+doorpass_cs_s10 AND NOT(reset) AND code(0) AND NOT(code(1)) AND 
+code(2) AND code(3)) OR (doorpass_cs_s11 AND NOT(reset) 
+AND code(0) AND NOT(code(1)) AND code(2) AND code(3)
+));
+END;

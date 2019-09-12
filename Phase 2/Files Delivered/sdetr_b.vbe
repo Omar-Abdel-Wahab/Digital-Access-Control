@@ -1,0 +1,136 @@
+-- VHDL data flow description generated from `sdetr_b`
+--		date : Mon Apr 22 12:52:35 2019
+
+
+-- Entity Declaration
+
+ENTITY sdetr_b IS
+  PORT (
+  daytime : in BIT;	-- daytime
+  reset : in BIT;	-- reset
+  code : in bit_vector(3 DOWNTO 0) ;	-- code
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  door : out BIT;	-- door
+  alarm : out BIT	-- alarm
+  );
+END sdetr_b;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF sdetr_b IS
+  SIGNAL doorpass_cs : REG_VECTOR(3 DOWNTO 0) REGISTER;	-- doorpass_cs
+  SIGNAL aux3 : BIT;		-- aux3
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux7 : BIT;		-- aux7
+  SIGNAL aux12 : BIT;		-- aux12
+  SIGNAL aux15 : BIT;		-- aux15
+  SIGNAL aux16 : BIT;		-- aux16
+  SIGNAL aux23 : BIT;		-- aux23
+  SIGNAL aux24 : BIT;		-- aux24
+  SIGNAL aux28 : BIT;		-- aux28
+  SIGNAL aux29 : BIT;		-- aux29
+  SIGNAL aux39 : BIT;		-- aux39
+  SIGNAL aux40 : BIT;		-- aux40
+  SIGNAL aux42 : BIT;		-- aux42
+  SIGNAL aux43 : BIT;		-- aux43
+  SIGNAL aux44 : BIT;		-- aux44
+  SIGNAL aux47 : BIT;		-- aux47
+  SIGNAL aux55 : BIT;		-- aux55
+  SIGNAL aux58 : BIT;		-- aux58
+  SIGNAL aux62 : BIT;		-- aux62
+  SIGNAL aux66 : BIT;		-- aux66
+  SIGNAL aux67 : BIT;		-- aux67
+  SIGNAL aux68 : BIT;		-- aux68
+  SIGNAL aux69 : BIT;		-- aux69
+  SIGNAL aux71 : BIT;		-- aux71
+
+BEGIN
+  aux71 <= (NOT(code(3)) AND (NOT(code(2)) AND NOT(
+doorpass_cs(3))));
+  aux69 <= (doorpass_cs(3) AND doorpass_cs(1));
+  aux68 <= (NOT(reset) AND NOT(code(0)));
+  aux67 <= (NOT(reset) AND code(0));
+  aux66 <= ((((code(1) AND doorpass_cs(0)) AND NOT(code(3)))
+ AND code(2)) AND doorpass_cs(1));
+  aux62 <= ((((aux44 AND NOT(doorpass_cs(0))) AND NOT(
+code(3))) AND code(2)) AND doorpass_cs(3));
+  aux58 <= (((NOT(aux7) AND NOT(doorpass_cs(3))) AND 
+doorpass_cs(1)) OR reset);
+  aux55 <= ((aux43 OR ((((NOT(code(1)) AND aux15) AND 
+code(3)) AND code(2)) AND NOT(doorpass_cs(3)))) AND 
+doorpass_cs(1));
+  aux47 <= (((aux44 AND doorpass_cs(0)) AND NOT(code(3))) 
+AND NOT(code(2)));
+  aux44 <= (code(1) AND NOT(doorpass_cs(2)));
+  aux43 <= (aux42 AND doorpass_cs(3));
+  aux42 <= ((aux29 AND code(3)) AND code(2));
+  aux40 <= (NOT(code(1)) AND doorpass_cs(2));
+  aux39 <= ((((aux16 AND ((NOT(code(1)) AND code(3)) AND 
+code(2))) AND doorpass_cs(3)) OR ((((NOT(code(1)) AND 
+doorpass_cs(0)) AND code(3)) AND code(2)) AND NOT(
+doorpass_cs(3)))) AND NOT(doorpass_cs(1)));
+  aux29 <= NOT(code(1) OR doorpass_cs(2));
+  aux28 <= (((code(1) OR doorpass_cs(0)) OR (NOT(code(3)) OR
+ NOT(code(2)))) AND aux7);
+  aux24 <= (aux23 AND NOT(doorpass_cs(1)));
+  aux23 <= ((((aux4 AND NOT(code(3))) OR code(1)) OR NOT(
+code(2))) OR (((NOT(aux16) OR NOT(code(3))) AND 
+doorpass_cs(3)) OR ((NOT(doorpass_cs(0)) AND code(3)) AND NOT(
+doorpass_cs(3)))));
+  aux16 <= NOT(NOT(aux15) AND NOT(daytime));
+  aux15 <= NOT(NOT(doorpass_cs(2)) AND doorpass_cs(0));
+  aux12 <= ((NOT(code(1)) OR (doorpass_cs(2) XOR code(3))) 
+OR ((aux7 AND code(2)) OR ((NOT(doorpass_cs(0)) AND
+ NOT(code(3))) AND NOT(code(2)))));
+  aux7 <= (doorpass_cs(2) OR doorpass_cs(0));
+  aux4 <= (NOT(doorpass_cs(2)) OR doorpass_cs(0));
+  aux3 <= ((((code(1) OR code(3)) OR code(2)) AND NOT(
+doorpass_cs(3))) AND NOT(doorpass_cs(1)));
+  label0 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    doorpass_cs (0) <= GUARDED (aux58 OR ((aux55 OR (NOT(aux23) AND NOT(
+doorpass_cs(1)))) AND code(0)) OR (((code(1) AND doorpass_cs(2)
+ AND code(3) AND NOT(code(2)) AND doorpass_cs(3) 
+AND NOT(doorpass_cs(1))) OR (aux47 AND NOT(daytime) 
+AND doorpass_cs(3))) AND NOT(code(0))));
+  END BLOCK label0;
+  label1 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    doorpass_cs (1) <= GUARDED ((((((NOT(aux42) AND doorpass_cs(3)) OR aux28) 
+AND doorpass_cs(1)) OR aux24) AND aux67) OR (((((NOT
+(doorpass_cs(2)) AND NOT(code(2)) AND NOT(daytime)
+) OR aux12) AND doorpass_cs(3)) OR (aux7 AND NOT(
+doorpass_cs(3))) OR (aux4 AND aux69) OR aux3) AND aux68));
+  END BLOCK label1;
+  label2 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    doorpass_cs (2) <= GUARDED ((((aux29 AND NOT(code(3)) AND code(2) AND aux69)
+ OR (((aux40 AND NOT(doorpass_cs(0))) AND NOT(
+code(3))) AND code(2) AND NOT(doorpass_cs(3)) AND NOT(
+doorpass_cs(1)))) AND aux67) OR ((aux66 OR ((aux62 OR (aux29 
+AND NOT(doorpass_cs(0)) AND aux71)) AND NOT(
+doorpass_cs(1)))) AND aux68));
+  END BLOCK label2;
+  label3 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    doorpass_cs (3) <= GUARDED (aux58 OR ((aux55 OR aux39) AND code(0)) OR (((
+aux47 AND daytime AND doorpass_cs(3)) OR aux66 OR ((
+aux62 OR (aux29 AND doorpass_cs(0) AND aux71)) AND NOT
+(doorpass_cs(1)))) AND NOT(code(0))));
+  END BLOCK label3;
+
+alarm <= (((((((NOT(aux29) OR NOT(code(2))) AND 
+doorpass_cs(3)) OR aux28) AND doorpass_cs(1)) OR aux24) AND 
+aux67) OR (((aux12 AND doorpass_cs(3)) OR ((((NOT(
+code(1)) OR code(3)) AND doorpass_cs(0) AND code(2)) OR 
+doorpass_cs(2)) AND NOT(doorpass_cs(3))) OR (((doorpass_cs(0) 
+AND NOT(code(2))) OR doorpass_cs(3)) AND aux4 AND 
+doorpass_cs(1)) OR aux3) AND aux68));
+
+door <= ((((aux43 OR (aux40 AND code(3) AND code(2) AND 
+NOT(doorpass_cs(3)))) AND doorpass_cs(1)) OR aux39) 
+AND aux67);
+END;
